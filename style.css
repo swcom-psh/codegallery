@@ -1,0 +1,573 @@
+:root {
+    --bg-dark: #050507;
+    --card-bg: #111115;
+    --card-bg-hover: #1a1a20;
+    --accent-primary: #00f2ff;
+    --accent-secondary: #ff0055;
+    --text-main: #ffffff;
+    --text-muted: #888899;
+    --grid-line: rgba(255, 255, 255, 0.03);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Background Effects */
+.background-grid {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image:
+        linear-gradient(var(--grid-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size: 50px 50px;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.background-glow {
+    position: fixed;
+    top: -20%;
+    right: -20%;
+    width: 80vw;
+    height: 80vw;
+    background: radial-gradient(circle, rgba(0, 242, 255, 0.05) 0%, transparent 60%);
+    filter: blur(100px);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Navigation */
+.studio-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 5%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--accent-primary);
+    text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    margin-left: 2rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--text-main);
+}
+
+/* Hero Section */
+.hero-section {
+    padding: 4rem 5% 6rem;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.badger {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--accent-primary);
+    margin-bottom: 1.5rem;
+    font-family: 'Rajdhani', sans-serif;
+    letter-spacing: 1px;
+}
+
+.hero-content h1 {
+    font-size: clamp(3rem, 8vw, 6rem);
+    line-height: 1.1;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #fff, #888);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1.5rem;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    max-width: 600px;
+}
+
+/* Bento Grid */
+.bento-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-auto-rows: 280px;
+    grid-auto-flow: dense;
+    /* Crucial for Bento layout */
+    gap: 1.5rem;
+    padding: 0 5% 5rem;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* Card Styles */
+.gallery-item {
+    background-color: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.gallery-item:hover {
+    background-color: var(--card-bg-hover);
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.item-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.item-icon-wrapper {
+    width: 80px;
+    height: 80px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s;
+}
+
+.gallery-item:hover .item-icon-wrapper {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.item-icon {
+    font-size: 3.5rem;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.item-info {
+    z-index: 2;
+}
+
+.item-tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.tag {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 100px;
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.item-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+    color: var(--text-main);
+}
+
+.item-rating {
+    font-size: 0.85rem;
+    color: #ffd700;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+/* Bento Spans */
+.span-wide {
+    grid-column: span 2;
+}
+
+.span-tall {
+    grid-row: span 2;
+}
+
+.span-large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+/* Make icons bigger in large cards */
+.span-large .item-icon-wrapper {
+    width: 140px;
+    height: 140px;
+}
+
+.span-large .item-icon {
+    font-size: 6rem;
+}
+
+.span-large .item-title {
+    font-size: 1.8rem;
+}
+
+@media (max-width: 768px) {
+    .bento-container {
+        grid-template-columns: 1fr;
+        /* Force single column on mobile */
+        grid-auto-rows: auto;
+    }
+
+    .span-wide,
+    .span-tall,
+    .span-large {
+        grid-column: span 1 !important;
+        grid-row: span 1 !important;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+}
+
+/* Modal Styles (Dark Theme) */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: #141419;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
+    /* Improve modal sizing */
+    width: 90%;
+    max-width: 1000px;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-header {
+    background: rgba(255, 255, 255, 0.02);
+    position: relative;
+    padding: 1.5rem 2rem;
+    flex-shrink: 0;
+}
+
+/* ... */
+
+.modal-body {
+    background: #0a0a0c;
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+.modal-header {
+    background: rgba(255, 255, 255, 0.02);
+    /* Make header relative for abs positioning if needed, 
+       but flexing is better. 
+       Let's ensure close btn is top right.
+    */
+    position: relative;
+    padding: 1.5rem 2rem;
+}
+
+.modal-tag {
+    background: var(--accent-primary);
+    color: #000;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    font-family: 'Rajdhani', sans-serif;
+    letter-spacing: 1px;
+}
+
+/* Close Button Fix */
+.close-btn {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    transition: all 0.2s;
+}
+
+.close-btn:hover {
+    background: var(--accent-secondary);
+    transform: rotate(90deg);
+}
+
+.modal-body {
+    background: #0a0a0c;
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+.code-viewer {
+    height: 100%;
+    overflow: auto;
+    padding: 1.5rem;
+}
+
+.modal-footer {
+    background: #1a1a20;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 1.5rem 2rem;
+    display: flex;
+    /* Added flex */
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* Revised Download Button */
+.download-btn {
+    flex: 0 0 auto;
+    /* Don't stretch too much if not needed, or keep flex-1 if we want big button */
+    min-width: 200px;
+    background: var(--accent-primary);
+    background: linear-gradient(135deg, var(--accent-primary), #00aaff);
+    color: #000;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 800;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+    box-shadow: 0 4px 20px rgba(0, 242, 255, 0.3);
+    border: none;
+}
+
+.download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 242, 255, 0.5);
+    background: white;
+    color: black;
+}
+
+.file-info {
+    display: flex;
+    gap: 1rem;
+    color: var(--text-muted);
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    margin-right: auto;
+    /* Push buttons to right */
+}
+
+.studio-footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--grid-line);
+}
+
+/* Like Button Styles */
+.like-container {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 5;
+    transition: transform 0.2s;
+}
+
+.gallery-item:hover .like-container {
+    background: rgba(0, 0, 0, 0.8);
+    border-color: rgba(255, 0, 85, 0.5);
+}
+
+.like-icon {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: white;
+    stroke-width: 2;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.like-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.like-btn:hover .like-icon {
+    stroke: #ff0055;
+    transform: scale(1.2);
+}
+
+.like-btn.liked .like-icon {
+    fill: #ff0055;
+    stroke: #ff0055;
+    transform: scale(1.1);
+}
+
+.like-count {
+    color: white;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+/* Modal Like Button (Larger) */
+.modal-like-wrapper {
+    /* margin-right: auto; Removed to allow file-info to push */
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.big-like-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    cursor: pointer;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+}
+
+.big-like-btn:hover {
+    background: rgba(255, 0, 85, 0.1);
+    border-color: #ff0055;
+}
+
+.big-like-btn .like-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.big-like-btn.liked {
+    background: rgba(255, 0, 85, 0.2);
+    border-color: #ff0055;
+    color: #ff0055;
+}
+
+.big-like-btn.liked .like-icon {
+    fill: #ff0055;
+    stroke: #ff0055;
+}
+
+/* Snow Effect */
+.snow-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    /* Below modal, above content */
+}
+
+.snowflake {
+    position: absolute;
+    top: -10px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}

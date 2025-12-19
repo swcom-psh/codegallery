@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 SDHS Game Studio Archive</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbit&family=Noto+Sans+KR:wght@300;400;700;900&family=Rajdhani:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Firebase SDK (Modular) -->
+    <!-- We will use ES modules in app.js, so no script tags needed here if app.js is type="module" -->
+    <!-- But to keep it simple with our current structure, let's use the compat libraries or import map. -->
+    <!-- Actually, let's switch app.js to type='module' for modern Firebase usage. -->
+    <script type="module" src="app.js?v=2"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+</head>
+
+<body>
+    <div class="background-grid"></div>
+    <div class="background-glow"></div>
+
+    <nav class="studio-nav">
+        <div class="logo">SDHS.<span>GAME</span></div>
+        <div class="nav-links">
+            <a href="#" class="active">ARCHIVE</a>
+            <a href="#">STUDENTS</a>
+            <a href="#">ABOUT</a>
+        </div>
+    </nav>
+
+    <header class="hero-section">
+        <div class="hero-content">
+            <span class="badger">2025 정보 수업 3차원 프로그래밍</span>
+            <h1>사대부고<br>3차원 프로그래밍<br> 학생 작품</h1>
+            <p>2025년 정보 수업 학생 작품 전시회. <br>파이썬으로 구현된 48개의 독창적인 세계를 탐험하세요.</p>
+            <p>작품을 다운받고 실행하여 체험해보세요. <br>만약 마음에 든다면 좋아요를 눌러주세요!!</p>
+        </div>
+    </header>
+
+    <main class="bento-container">
+        <!-- Grid items will be injected here by app.js -->
+    </main>
+
+    <footer class="studio-footer">
+        <p>© 2025 SDHS Game Studio. Crafted with Python & Passion.</p>
+    </footer>
+
+    <!-- Modal for viewing code -->
+    <div id="code-modal" class="modal-overlay hidden">
+        <div class="modal-content glass-panel">
+            <div class="modal-header">
+                <div>
+                    <span id="modal-tag" class="modal-tag">RPG</span>
+                    <h2 id="modal-title">프로젝트 제목</h2>
+                </div>
+                <button id="close-modal" class="close-btn">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 6L6 18M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="code-viewer">
+                    <pre><code id="code-block" class="language-python"># 소스 코드 로딩 중...</code></pre>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="file-info">
+                    <span id="file-size">PYTHON FILE</span>
+                    <span id="file-rating">⭐ 4.9</span>
+                </div>
+                <!-- <p class="modal-note-small">이 프로그램은 Ursina 엔진을 사용합니다.</p> -->
+                <a id="download-btn" href="#" class="download-btn" download>
+                    <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        style="margin-right: 8px;">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    </svg>
+                    <span>SOURCE DOWNLOAD</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

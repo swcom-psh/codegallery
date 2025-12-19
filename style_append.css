@@ -1,0 +1,103 @@
+/* Like Button Styles */
+.like-container {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 5;
+    transition: transform 0.2s;
+}
+
+.gallery-item:hover .like-container {
+    background: rgba(0, 0, 0, 0.8);
+    border-color: rgba(255, 0, 85, 0.5);
+}
+
+.like-icon {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: white;
+    stroke-width: 2;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.like-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.like-btn:hover .like-icon {
+    stroke: #ff0055;
+    transform: scale(1.2);
+}
+
+.like-btn.liked .like-icon {
+    fill: #ff0055;
+    stroke: #ff0055;
+    transform: scale(1.1);
+}
+
+.like-count {
+    color: white;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+/* Modal Like Button (Larger) */
+.modal-like-wrapper {
+    margin-right: auto;
+    /* Push download btn to right */
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.big-like-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    cursor: pointer;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+}
+
+.big-like-btn:hover {
+    background: rgba(255, 0, 85, 0.1);
+    border-color: #ff0055;
+}
+
+.big-like-btn .like-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.big-like-btn.liked {
+    background: rgba(255, 0, 85, 0.2);
+    border-color: #ff0055;
+    color: #ff0055;
+}
+
+.big-like-btn.liked .like-icon {
+    fill: #ff0055;
+    stroke: #ff0055;
+}
