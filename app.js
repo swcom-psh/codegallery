@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Fetch manifest
     let projects = [];
     try {
-        const response = await fetch('manifest.json');
+        const response = await fetch(`manifest.json?t=${new Date().getTime()}`);
         projects = await response.json();
     } catch (error) {
         galleryContainer.innerHTML = '<p style="text-align:center; color:red;">프로젝트 목록 로딩 실패 (manifest.json)</p>';
