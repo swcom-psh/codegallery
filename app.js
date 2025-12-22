@@ -350,7 +350,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
 
         try {
-            const res = await fetch(filePath);
+            const res = await fetch(`${filePath}?t=${new Date().getTime()}`);
             if (!res.ok) throw new Error('파일을 찾을 수 없습니다');
             const text = await res.text();
             codeBlock.textContent = text;
