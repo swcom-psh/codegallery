@@ -28,14 +28,14 @@ ground = Entity(model = 'plane',
                 collider = 'box',
                 position = (0, 0, 0),
                 color="#ffffff",
-                texture='textures/lava.jpg')
+                texture='./lava.jpg')
 
 start = Entity(
      model = 'cube',
      collider = 'box',
      scale = (20, 0.5, 13),
      position = (8, 2, 5),
-     color = '2a2b2cbd'
+     color = '#2a2b2cbd'
 )
 
 finish = Entity(
@@ -43,7 +43,7 @@ finish = Entity(
      collider = 'box',
      scale = (20, 0.5, 13),
      position = (28, 2, 5),
-     color = '2a2b2cbd'
+     color = '#2a2b2cbd'
 )
 
 
@@ -80,7 +80,7 @@ for pos in platform_positions:
         scale=(3, 0.5, 3),
         position=pos,
         collider='box',
-        texture = 'textures/stone.jpg'
+        texture = './stone.jpg'
     )
 
 platform = Entity(
@@ -90,7 +90,7 @@ platform = Entity(
      position=(7, 3, 87),
      collider='box',
      direction=1,
-     texture = 'textures/stone.jpg'
+     texture = './stone.jpg'
 )
 
 ddd = Entity(
@@ -99,7 +99,7 @@ ddd = Entity(
      scale = (3, 0.5, 3),
      position = (25, 3.3, 81),
      collider = 'box',
-     texture = 'textures/stone.jpg'
+     texture = './stone.jpg'
 )
 
 
@@ -110,7 +110,7 @@ platform_real = Entity(
      position=(29, 6, 39),
      collider='box',
      direction=1,
-     texture = 'textures/namu.jpg',
+     texture = './namu.jpg',
      rotation_y = 90,
      rotation_z = 20
 )
@@ -139,7 +139,7 @@ platform_fake1 = Entity(
      scale=(15, 0.5, 1),
      position=(25, 6, 39),
      direction=1,
-     texture = 'textures/namu.jpg',
+     texture = './namu.jpg',
      rotation_y = 90,
      rotation_z = 20
 )
@@ -150,7 +150,7 @@ platform_fake2 = Entity(
      scale=(15, 0.5, 1),
      position=(23, 6, 39),
      direction=1,
-     texture = 'textures/namu.jpg',
+     texture = './namu.jpg',
      rotation_y = 90,
      rotation_z = 20
 )
@@ -161,7 +161,7 @@ platform_fake1 = Entity(
      scale=(15, 0.5, 1),
      position=(27, 6, 39),
      direction=1,
-     texture = 'textures/namu.jpg',
+     texture = './namu.jpg',
      rotation_y = 90,
      rotation_z = 20
 )
@@ -172,7 +172,7 @@ platform_fake1 = Entity(
      scale=(15, 0.5, 1),
      position=(31, 6, 39),
      direction=1,
-     texture = 'textures/namu.jpg',
+     texture = './namu.jpg',
      rotation_y = 90,
      rotation_z = 20
 )
@@ -183,7 +183,7 @@ platform_fake1 = Entity(
      scale=(15, 0.5, 1),
      position=(33, 6, 39),
      direction=1,
-     texture = 'textures/namu.jpg',
+     texture = './namu.jpg',
      rotation_y = 90,
      rotation_z = 20
 )
@@ -265,7 +265,7 @@ for i in range(len(MAP)):
                     position = (i * 5, 0, j * 5),
                     scale = (5,30,5),
                     collider = 'box',
-                    texture='textures/wall.jpg'
+                    texture='./wall.jpg'
                     )
 
 

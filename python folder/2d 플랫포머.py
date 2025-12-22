@@ -11,6 +11,7 @@ player = PlatformerController2d(
     scale=1,
     max_jumps=2
 )
+#최지환
 
 
 #땅

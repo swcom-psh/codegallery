@@ -1,6 +1,7 @@
 from ursina import * 
 app = Ursina() 
 EditorCamera() 
+#김도영
 
 # --- 엔티티(객체) 정의 ---
 cube = Entity() 

@@ -1,5 +1,5 @@
 from ursina import *
-
+#김승우
 app = Ursina()
 
 바닥 = Entity(model='plane', scale=12, color=color.green)

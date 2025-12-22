@@ -2,7 +2,7 @@ from ursina import*
 
 app=Ursina()#app이라는 객체에 우르시나 월드를 불려온다.
 EditorCamera()
-
+#오세호
 
 
 def input(key):
