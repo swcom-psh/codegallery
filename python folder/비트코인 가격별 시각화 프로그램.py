@@ -2,7 +2,7 @@ from ursina import *
 
 app = Ursina()
 EditorCamera()
-
+#용이삭
 def input(key):
     if key == 'escape':
         application.quit()

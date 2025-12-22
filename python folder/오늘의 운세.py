@@ -1,6 +1,6 @@
 from ursina import *
 import random
-
+#임찬오
 app = Ursina()
 
 class Mycamera(EditorCamera):

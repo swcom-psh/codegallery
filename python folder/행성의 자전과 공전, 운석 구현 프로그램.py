@@ -1,6 +1,6 @@
 from ursina import *
 from random import uniform   # 랜덤 위치
-
+#김예준
 app = Ursina()
 window.color = color.black   # 배경을 검정색으로
 EditorCamera()

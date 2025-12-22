@@ -2,7 +2,7 @@ from ursina import *
 from ursina.prefabs.first_person_controller import FirstPersonController
 
 app = Ursina()
-#EditorCamera()
+EditorCamera()
 __ = False
 
 window.color = color.hex("#1F1D1D")
