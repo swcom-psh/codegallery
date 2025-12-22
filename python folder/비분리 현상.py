@@ -1,3 +1,4 @@
+#2105 김솔희 수행평가
 from ursina import *
 from ursina.prefabs.first_person_controller import FirstPersonController
 
